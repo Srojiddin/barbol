@@ -1,0 +1,24 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+    registrasiya
+{% endblock %}
+
+
+{% block content %}
+
+    {% include 'base/header.html' %}
+
+    <main>
+        <div style="display: flex; justify-content: center; padding-top: 40px; padding-bottom: 40px">
+            <form action="{% url 'signup' %}" method="post" style="width: 50%">
+                {% csrf_token %}
+                {{  form.as_p  }}
+              <button type="submit" class="btn btn-primary">zaregistrirovatsa</button>
+            </form>
+        </div>
+    </main>
+
+    {% include 'base/footer.html' %}
+
+{% endblock %}
